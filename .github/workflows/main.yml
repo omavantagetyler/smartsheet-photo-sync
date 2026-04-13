@@ -1,8 +1,9 @@
 name: Master Smartsheet Photo Sync
 
 on:
-  schedule:
-    - cron: '3,18,33,48 * * * *'
+  # Swapped from schedule to allow cron-job.org to trigger this
+  repository_dispatch:
+    types: [trigger-photo-sync]
   workflow_dispatch:
 
 jobs:
